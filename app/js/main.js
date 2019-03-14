@@ -14,14 +14,14 @@ let sliderList = [],
 
 function Slide(index, status, slide) {
     this.id = index;
-    this.isActive = status;
+    this.isActive = status;	
     this.slide = slide;
 };
 
 function changeSlide(elem) {
 	let slides = document.querySelectorAll('.slide');
 	for (let i = 0; i < sliderQuantity; i++) {
-		slides[i].classList.remove('active')
+		slides[i].classList.remove('active');
 	};
 	elem.classList.add('active');
 };
@@ -35,6 +35,10 @@ function changeClassPagination(index) {
 
 function changeSlideByPagination() {
 	let index = this.getAttribute('data-index');
+	for (let i = 0; i < sliderQuantity; i++) {
+		sliderList[i].isActive = false
+	}
+	sliderList[index].isActive = true;
 	changeSlide(sliderList[index].slide);
 	changeClassPagination(index);
 
