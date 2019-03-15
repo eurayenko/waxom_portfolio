@@ -14,7 +14,7 @@ let sliderList = [],
 
 function Slide(index, status, slide) {
     this.id = index;
-    this.isActive = status;	
+    this.isActive = status;
     this.slide = slide;
 };
 
